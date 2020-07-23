@@ -17,6 +17,8 @@ class Node:
         self.rect = Rectangle(self.point1, self.point2)
 
     def setColor(self, color):
+        if color > 255:
+            color = 255
         self.rect.setFill(color_rgb(0, 0, color))
 
     def drawRect(self, win):
