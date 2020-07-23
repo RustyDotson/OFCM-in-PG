@@ -24,3 +24,8 @@ class Node:
 
     def setCrit(self, value):
         self.crit = value
+
+    def colorCrit(self):
+        if self.crit > .99:
+            self.crit = .99
+        self.rect.setFill(color_rgb(0, 0, int(self.crit*255)))

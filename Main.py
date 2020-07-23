@@ -21,7 +21,7 @@ def create_grid():
     for y in range(gridHeight):
         row = []
         for x in range(gridWidth):
-            newNode = Node(.7, x, y, x * 10, y * 10)
+            newNode = Node(.2, x, y, x * 10, y * 10)
             newNode.setColor(int(newNode.crit * 255))
             row.append(newNode)
         grid.append(row)
@@ -40,72 +40,92 @@ def olami():
         point = grid[rand1][rand2]
         if point.crit > .9:
             point.setCrit(.1)
-            stable = False
-            spread(point)
+            return spread(point)
         else:
             point.setCrit(point.crit + .05)
             point.setColor(int((point.crit + .05) * 255))
     return
 
+
 def spread(point):
     if point.posY == 0 and point.posX == 0:
         print(1)
-        grid[point.posX + 1][point.posY].crit = grid[point.posX + 1][point.posY].crit + .1
-        grid[point.posX][point.posY + 1].crit = grid[point.posX][point.posY + 1].crit + .10
+        grid[point.posX + 1][point.posY].crit = grid[point.posX + 1][point.posY].crit + .4
+        grid[point.posX][point.posY + 1].crit = grid[point.posX][point.posY + 1].crit + .4
+        return
 
     elif point.posY == 0 and point.posX == len(grid[0])-1:
         print(2)
-        grid[point.posX - 1][point.posY].crit = grid[point.posX - 1][point.posY].crit + .1
-        grid[point.posX][point.posY + 1].crit = grid[point.posX][point.posY + 1].crit + .10
+        grid[point.posX - 1][point.posY].crit = grid[point.posX - 1][point.posY].crit + .4
+        grid[point.posX][point.posY + 1].crit = grid[point.posX][point.posY + 1].crit + .4
+        return
 
     elif point.posY == len(grid)-1 and point.posX == 0:
         print(3)
-        grid[point.posX + 1][point.posY].crit = grid[point.posX + 1][point.posY].crit + .1
-        grid[point.posX][point.posY - 1].crit = grid[point.posX][point.posY - 1].crit + .10
+        grid[point.posX + 1][point.posY].crit = grid[point.posX + 1][point.posY].crit + .4
+        grid[point.posX][point.posY - 1].crit = grid[point.posX][point.posY - 1].crit + .4
+        return
 
     elif point.posY == len(grid)-1 and point.posX == len(grid[0])-1:
         print(4)
-        grid[point.posX - 1][point.posY].crit = grid[point.posX - 1][point.posY].crit + .1
-        grid[point.posX][point.posY - 1].crit = grid[point.posX][point.posY - 1].crit + .10
+        grid[point.posX - 1][point.posY].crit = grid[point.posX - 1][point.posY].crit + .4
+        grid[point.posX][point.posY - 1].crit = grid[point.posX][point.posY - 1].crit + .4
+        return
 
     elif point.posY == len(grid)-1:
         print(5)
-        grid[point.posX + 1][point.posY].crit = grid[point.posX + 1][point.posY].crit + .1
-        grid[point.posX][point.posY - 1].crit = grid[point.posX][point.posY - 1].crit + .10
-        grid[point.posX - 1][point.posY].crit = grid[point.posX - 1][point.posY].crit + .10
+        grid[point.posX + 1][point.posY].crit = grid[point.posX + 1][point.posY].crit + .33
+        grid[point.posX][point.posY - 1].crit = grid[point.posX][point.posY - 1].crit + .33
+        grid[point.posX - 1][point.posY].crit = grid[point.posX - 1][point.posY].crit + .33
+
+        grid[point.posX + 1][point.posY].colorCrit()
+        grid[point.posX][point.posY - 1].colorCrit()
+        grid[point.posX - 1][point.posY].colorCrit()
+        return
 
     elif point.posX == 0:
         print(6)
-        grid[point.posX][point.posY + 1].crit = grid[point.posX][point.posY + 1].crit + .1
-        grid[point.posX + 1][point.posY].crit = grid[point.posX + 1][point.posY].crit + .1
-        grid[point.posX][point.posY - 1].crit = grid[point.posX][point.posY - 1].crit + .10
+        grid[point.posX][point.posY + 1].crit = grid[point.posX][point.posY + 1].crit + .33
+        grid[point.posX + 1][point.posY].crit = grid[point.posX + 1][point.posY].crit + .33
+        grid[point.posX][point.posY - 1].crit = grid[point.posX][point.posY - 1].crit + .33
+        return
 
     elif point.posX == len(grid[0])-1:
         print(7)
-        grid[point.posX - 1][point.posY].crit = grid[point.posX - 1][point.posY].crit + .1
-        grid[point.posX][point.posY + 1].crit = grid[point.posX][point.posY + 1].crit + .1
-        grid[point.posX][point.posY - 1].crit = grid[point.posX][point.posY - 1].crit + .1
+        grid[point.posX - 1][point.posY].crit = grid[point.posX - 1][point.posY].crit + .33
+        grid[point.posX][point.posY + 1].crit = grid[point.posX][point.posY + 1].crit + .33
+        grid[point.posX][point.posY - 1].crit = grid[point.posX][point.posY - 1].crit + .33
+        return
 
     elif point.posY == 0:
         print(8)
-        grid[point.posX - 1][point.posY].crit = grid[point.posX - 1][point.posY].crit + .1
-        grid[point.posX + 1][point.posY].crit = grid[point.posX + 1][point.posY].crit + .1
-        grid[point.posX][point.posY + 1].crit = grid[point.posX][point.posY + 1].crit + .10
+        grid[point.posX - 1][point.posY].crit = grid[point.posX - 1][point.posY].crit + .2
+        grid[point.posX + 1][point.posY].crit = grid[point.posX + 1][point.posY].crit + .2
+        grid[point.posX][point.posY + 1].crit = grid[point.posX][point.posY + 1].crit + .2
+        return
 
     else:
         print(9)
-        grid[point.posX - 1][point.posY].crit = grid[point.posX - 1][point.posY].crit + .1
-        grid[point.posX + 1][point.posY].crit = grid[point.posX + 1][point.posY].crit + .1
-        grid[point.posX][point.posY - 1].crit = grid[point.posX][point.posY - 1].crit + .10
-        grid[point.posX][point.posY + 1].crit = grid[point.posX][point.posY + 1].crit + .10
+        grid[point.posX - 1][point.posY].crit = grid[point.posX - 1][point.posY].crit + .2
+        grid[point.posX + 1][point.posY].crit = grid[point.posX + 1][point.posY].crit + .2
+        grid[point.posX][point.posY - 1].crit = grid[point.posX][point.posY - 1].crit + .2
+        grid[point.posX][point.posY + 1].crit = grid[point.posX][point.posY + 1].crit + .2
+        grid[point.posX - 1][point.posY].colorCrit()
+        grid[point.posX + 1][point.posY].colorCrit()
+        grid[point.posX][point.posY - 1].colorCrit()
+        grid[point.posX][point.posY + 1].colorCrit()
+
+        spread(grid[point.posX - 1][point.posY])
+        spread(grid[point.posX + 1][point.posY])
+        spread(grid[point.posX][point.posY - 1])
+        spread(grid[point.posX][point.posY + 1])
 
     for row in grid:
         for node in row:
             if node.crit > .9:
-                node.setCrit(.1)
-                olami()
-
-
+                node.setCrit(.7)
+                node.colorCrit()
+    olami()
 
 
 def print_grid():
@@ -128,10 +148,6 @@ print_grid()
 
 
 def main():
-    #win = GraphWin("my Window", 500, 500)
-    #win.setBackground(color_rgb(0, 0, 0))
-    #grid = create_grid()
-    #print_grid(grid, win)
     olami()
     win.getMouse()
     win.close()
