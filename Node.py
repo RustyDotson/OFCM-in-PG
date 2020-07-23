@@ -5,6 +5,7 @@
 
 from graphics import *
 
+
 class Node:
 
     def __init__(self, critValue, x, y, graphX, graphY):
@@ -20,3 +21,6 @@ class Node:
 
     def drawRect(self, win):
         self.rect.draw(win)
+
+    def setCrit(self, value):
+        self.crit = value
