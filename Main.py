@@ -25,7 +25,7 @@ def create_grid():
 
 
 def iterateGrid():
-    falloffValue = .2
+    falloffValue = .05
     while True:
         for row in grid:
             for point in row:
