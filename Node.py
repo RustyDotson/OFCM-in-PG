@@ -13,13 +13,13 @@ class Node:
         self.posX = x
         self.posY = y
         self.point1 = Point(graphX, graphY)
-        self.point2 = Point(graphX + 10, graphY - 10)
+        self.point2 = Point(graphX + 12, graphY - 12)
         self.rect = Rectangle(self.point1, self.point2)
 
     def setColor(self, color):
         if color > 255:
             color = 255
-        self.rect.setFill(color_rgb(0, 0, color))
+        self.rect.setFill(color_rgb(int(color * .5), color, int(color * .75)))
 
     def drawRect(self, win):
         self.rect.draw(win)
@@ -30,4 +30,4 @@ class Node:
     def colorCrit(self):
         if self.crit > .99:
             self.crit = .99
-        self.rect.setFill(color_rgb(0, 0, int(self.crit*255)))
+        self.rect.setFill(color_rgb(int(self.crit*255), 0, int((self.crit*255)*.75)))
