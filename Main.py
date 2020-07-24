@@ -1,13 +1,9 @@
 ######################################################################
 # A graphical representation of the Olami Feder Christensen Model.
-# All code below is written by Rusty Dotson, but makes use of
-# the Graphics library written by John Zelle.
+# All code below is written by Rusty Dotson
 ######################################################################
 import random
-import numpy as np
-from graphics import *
 from Node import *
-import time
 
 
 def create_grid():
@@ -17,21 +13,20 @@ def create_grid():
     """
     grid = []
     gridWidth = 25
-    gridHeight =25
+    gridHeight = 25
     for y in range(gridHeight):
         row = []
         for x in range(gridWidth):
-            newNode = Node(.2, x, y, x * 20, y * 20)
+            newNode = Node(.2, x, y - 10, x * 25, (y * 25)-10)
             newNode.setColor(int(newNode.crit * 255))
             row.append(newNode)
         grid.append(row)
     return grid
 
 
-def olami():
-    falloffValue = .05
-    unstable = True
-    while unstable:
+def iterateGrid():
+    falloffValue = .2
+    while True:
         for row in grid:
             for point in row:
                 if point.crit > 1:
@@ -116,12 +111,13 @@ def olami():
                         grid[point.posX][point.posY - 1].colorCrit()
                         grid[point.posX][point.posY + 1].colorCrit()
 
-                    point.setCrit(.0)
+                    point.setCrit(.05)
 
             rand1 = random.randrange(0, 25)
             rand2 = random.randrange(0, 25)
             point = grid[rand1][rand2]
-            point.setCrit(point.crit + .02)
+            if point.crit < 1:
+                point.setCrit(point.crit + .008)
             point.setColor(int((point.crit + .05) * 255))
 
 
@@ -138,14 +134,14 @@ def print_grid():
     print(len(grid))
 
 
-win = GraphWin("my Window", 500, 500)
-win.setBackground(color_rgb(0, 0, 0))
+win = GraphWin("SPFFH", 561, 566)
+win.setBackground(color_rgb(10, 10, 10))
 grid = create_grid()
 print_grid()
 
 
 def main():
-    olami()
+    iterateGrid()
     win.getMouse()
     win.close()
 
