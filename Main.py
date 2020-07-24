@@ -34,7 +34,7 @@ def olami():
     while unstable:
         for row in grid:
             for point in row:
-                if point.crit > .95:
+                if point.crit > 1:
                     if point.posY == 0 and point.posX == 0:
                         grid[point.posX + 1][point.posY].crit = grid[point.posX + 1][point.posY].crit + falloffValue
                         grid[point.posX][point.posY + 1].crit = grid[point.posX][point.posY + 1].crit + falloffValue
@@ -121,7 +121,7 @@ def olami():
             rand1 = random.randrange(0, 25)
             rand2 = random.randrange(0, 25)
             point = grid[rand1][rand2]
-            point.setCrit(point.crit + .01)
+            point.setCrit(point.crit + .02)
             point.setColor(int((point.crit + .05) * 255))
 
 
