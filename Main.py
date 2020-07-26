@@ -37,66 +37,66 @@ def iterateGrid():
             for point in row:
                 if point.crit >= .99:
                     if point.posY == 0 and point.posX == 0:
-                        grid[point.posX + 1][point.posY].crit = grid[point.posX + 1][point.posY].crit + falloffValue
-                        grid[point.posX][point.posY + 1].crit = grid[point.posX][point.posY + 1].crit + falloffValue
+                        grid[point.posX + 1][point.posY].crit = grid[point.posX + 1][point.posY].crit + (falloffValue * 2)
+                        grid[point.posX][point.posY + 1].crit = grid[point.posX][point.posY + 1].crit + (falloffValue * 2)
 
                         grid[point.posX + 1][point.posY].colorCrit()
                         grid[point.posX][point.posY + 1].colorCrit()
 
 
                     elif point.posY == 0 and point.posX == len(grid[0]) - 1:
-                        grid[point.posX - 1][point.posY].crit = grid[point.posX - 1][point.posY].crit + falloffValue
-                        grid[point.posX][point.posY + 1].crit = grid[point.posX][point.posY + 1].crit + falloffValue
+                        grid[point.posX - 1][point.posY].crit = grid[point.posX - 1][point.posY].crit + (falloffValue * 2)
+                        grid[point.posX][point.posY + 1].crit = grid[point.posX][point.posY + 1].crit + (falloffValue * 2)
 
                         grid[point.posX - 1][point.posY].colorCrit()
                         grid[point.posX][point.posY + 1].colorCrit()
 
 
                     elif point.posY == len(grid) - 1 and point.posX == 0:
-                        grid[point.posX + 1][point.posY].crit = grid[point.posX + 1][point.posY].crit + falloffValue
-                        grid[point.posX][point.posY - 1].crit = grid[point.posX][point.posY - 1].crit + falloffValue
+                        grid[point.posX + 1][point.posY].crit = grid[point.posX + 1][point.posY].crit + (falloffValue * 2)
+                        grid[point.posX][point.posY - 1].crit = grid[point.posX][point.posY - 1].crit +(falloffValue * 2)
 
                         grid[point.posX + 1][point.posY].colorCrit()
                         grid[point.posX][point.posY - 1].colorCrit()
 
                     elif point.posY == len(grid) - 1 and point.posX == len(grid[0]) - 1:
-                        grid[point.posX - 1][point.posY].crit = grid[point.posX - 1][point.posY].crit + falloffValue
-                        grid[point.posX][point.posY - 1].crit = grid[point.posX][point.posY - 1].crit + falloffValue
+                        grid[point.posX - 1][point.posY].crit = grid[point.posX - 1][point.posY].crit + (falloffValue * 2)
+                        grid[point.posX][point.posY - 1].crit = grid[point.posX][point.posY - 1].crit + (falloffValue * 2)
 
                         grid[point.posX - 1][point.posY].colorCrit()
                         grid[point.posX][point.posY - 1].colorCrit()
 
                     elif point.posY == len(grid) - 1:
-                        grid[point.posX + 1][point.posY].crit = grid[point.posX + 1][point.posY].crit + falloffValue
-                        grid[point.posX][point.posY - 1].crit = grid[point.posX][point.posY - 1].crit + falloffValue
-                        grid[point.posX - 1][point.posY].crit = grid[point.posX - 1][point.posY].crit + falloffValue
+                        grid[point.posX + 1][point.posY].crit = grid[point.posX + 1][point.posY].crit + (falloffValue * 1.33)
+                        grid[point.posX][point.posY - 1].crit = grid[point.posX][point.posY - 1].crit + (falloffValue * 1.33)
+                        grid[point.posX - 1][point.posY].crit = grid[point.posX - 1][point.posY].crit + (falloffValue * 1.33)
 
                         grid[point.posX + 1][point.posY].colorCrit()
                         grid[point.posX][point.posY - 1].colorCrit()
                         grid[point.posX - 1][point.posY].colorCrit()
 
                     elif point.posX == 0:
-                        grid[point.posX][point.posY + 1].crit = grid[point.posX][point.posY + 1].crit + falloffValue
-                        grid[point.posX + 1][point.posY].crit = grid[point.posX + 1][point.posY].crit + falloffValue
-                        grid[point.posX][point.posY - 1].crit = grid[point.posX][point.posY - 1].crit + falloffValue
+                        grid[point.posX][point.posY + 1].crit = grid[point.posX][point.posY + 1].crit + (falloffValue * 1.33)
+                        grid[point.posX + 1][point.posY].crit = grid[point.posX + 1][point.posY].crit + (falloffValue * 1.33)
+                        grid[point.posX][point.posY - 1].crit = grid[point.posX][point.posY - 1].crit + (falloffValue * 1.33)
 
                         grid[point.posX][point.posY + 1].colorCrit()
                         grid[point.posX + 1][point.posY].colorCrit()
                         grid[point.posX][point.posY - 1].colorCrit()
 
                     elif point.posX == len(grid[0]) - 1:
-                        grid[point.posX - 1][point.posY].crit = grid[point.posX - 1][point.posY].crit + falloffValue
-                        grid[point.posX][point.posY + 1].crit = grid[point.posX][point.posY + 1].crit + falloffValue
-                        grid[point.posX][point.posY - 1].crit = grid[point.posX][point.posY - 1].crit + falloffValue
+                        grid[point.posX - 1][point.posY].crit = grid[point.posX - 1][point.posY].crit + (falloffValue * 1.33)
+                        grid[point.posX][point.posY + 1].crit = grid[point.posX][point.posY + 1].crit + (falloffValue * 1.33)
+                        grid[point.posX][point.posY - 1].crit = grid[point.posX][point.posY - 1].crit + (falloffValue * 1.33)
 
                         grid[point.posX - 1][point.posY].colorCrit()
                         grid[point.posX][point.posY + 1].colorCrit()
                         grid[point.posX][point.posY - 1].colorCrit()
 
                     elif point.posY == 0:
-                        grid[point.posX - 1][point.posY].crit = grid[point.posX - 1][point.posY].crit + falloffValue
-                        grid[point.posX + 1][point.posY].crit = grid[point.posX + 1][point.posY].crit + falloffValue
-                        grid[point.posX][point.posY + 1].crit = grid[point.posX][point.posY + 1].crit + falloffValue
+                        grid[point.posX - 1][point.posY].crit = grid[point.posX - 1][point.posY].crit + (falloffValue * 1.33)
+                        grid[point.posX + 1][point.posY].crit = grid[point.posX + 1][point.posY].crit + (falloffValue * 1.33)
+                        grid[point.posX][point.posY + 1].crit = grid[point.posX][point.posY + 1].crit + (falloffValue * 1.33)
 
                         grid[point.posX - 1][point.posY].colorCrit()
                         grid[point.posX + 1][point.posY].colorCrit()
@@ -113,7 +113,7 @@ def iterateGrid():
                         grid[point.posX][point.posY - 1].colorCrit()
                         grid[point.posX][point.posY + 1].colorCrit()
 
-                    point.setCrit(.25)
+                    point.setCrit(.2)
 
             rand1 = random.randrange(0, 25)
             rand2 = random.randrange(0, 25)

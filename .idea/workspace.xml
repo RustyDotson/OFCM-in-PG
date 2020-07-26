@@ -101,22 +101,22 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1899" height="284" key="GridCell.Tab.0.bottom" timestamp="1595792844770">
+    <state width="1899" height="284" key="GridCell.Tab.0.bottom" timestamp="1595794631661">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="284" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1360.156.1360.728@0.0.1920.1040" timestamp="1595792844770" />
-    <state width="1899" height="284" key="GridCell.Tab.0.center" timestamp="1595792844769">
+    <state width="1899" height="284" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1360.156.1360.728@0.0.1920.1040" timestamp="1595794631661" />
+    <state width="1899" height="284" key="GridCell.Tab.0.center" timestamp="1595794631661">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="284" key="GridCell.Tab.0.center/0.0.1920.1040/-1360.156.1360.728@0.0.1920.1040" timestamp="1595792844769" />
-    <state width="1899" height="284" key="GridCell.Tab.0.left" timestamp="1595792844769">
+    <state width="1899" height="284" key="GridCell.Tab.0.center/0.0.1920.1040/-1360.156.1360.728@0.0.1920.1040" timestamp="1595794631661" />
+    <state width="1899" height="284" key="GridCell.Tab.0.left" timestamp="1595794631661">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="284" key="GridCell.Tab.0.left/0.0.1920.1040/-1360.156.1360.728@0.0.1920.1040" timestamp="1595792844769" />
-    <state width="1899" height="284" key="GridCell.Tab.0.right" timestamp="1595792844770">
+    <state width="1899" height="284" key="GridCell.Tab.0.left/0.0.1920.1040/-1360.156.1360.728@0.0.1920.1040" timestamp="1595794631661" />
+    <state width="1899" height="284" key="GridCell.Tab.0.right" timestamp="1595794631661">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="284" key="GridCell.Tab.0.right/0.0.1920.1040/-1360.156.1360.728@0.0.1920.1040" timestamp="1595792844770" />
+    <state width="1899" height="284" key="GridCell.Tab.0.right/0.0.1920.1040/-1360.156.1360.728@0.0.1920.1040" timestamp="1595794631661" />
     <state width="1899" height="347" key="GridCell.Tab.1.bottom" timestamp="1595788728256">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -141,5 +141,16 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="632" y="229" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1360.156.1360.728@0.0.1920.1040" timestamp="1595788513888" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Node.py</url>
+          <line>12</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

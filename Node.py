@@ -19,14 +19,7 @@ class Node:
     def setColor(self, color):
         if color > 255:
             color = 255
-        if self.crit > 1:
-            self.rect.setFill(color_rgb(color, 0, 0))
-        elif self.crit > .7:
-            self.rect.setFill(color_rgb(color, int(color * .64), 0))
-        elif self.crit > .4:
-            self.rect.setFill(color_rgb(color, color, 0))
-        else:
-            self.rect.setFill(color_rgb(0, color, 0))
+        self.rect.setFill(color_rgb(0, 0, color))
 
     def drawRect(self, win):
         self.rect.draw(win)
@@ -37,11 +30,4 @@ class Node:
     def colorCrit(self):
         if self.crit > .99:
             self.crit = .99
-        if self.crit > 1:
-            self.rect.setFill(color_rgb(int(self.crit*255), 0, 0))
-        elif self.crit > .7:
-            self.rect.setFill(color_rgb(int(self.crit*255), int((self.crit*255)*.64), 0))
-        elif self.crit > .4:
-            self.rect.setFill(color_rgb(int(self.crit*255), int(self.crit*255), 0))
-        else:
-            self.rect.setFill(color_rgb(0, int(self.crit * 255), 0))
+        self.rect.setFill(color_rgb(0, 0, int(self.crit * 255)))
