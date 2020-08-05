@@ -8,7 +8,7 @@ from Node import *
 
 def create_grid():
     """
-    Creates and returns a 2d list of nodes to present the Olami model
+    Creates and returns a 2d list of nodes to present the model
     :return: grid
     """
     grid = []
